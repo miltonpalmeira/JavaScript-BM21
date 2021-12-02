@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício trocar imagem - JAVASCRIPT</title>
+</head>
+<body>
+    <figure>
+        <img src="presente-fechado.gif" id="presente" 
+            alt="Presente Fechado"
+        />
+    </figure>
+
+    <script>
+        function trocarImagem() {
+            if (document.getElementById('presente').alt == 'Presente Fechado') {
+                document.getElementById('presente').src = 'presente-aberto.gif';
+                document.getElementById('presente').alt = 'Presente Aberto';
+            }
+            else {
+                document.getElementById('presente').src = 'presente-fechado.gif';
+                document.getElementById('presente').alt = 'Presente Fechado';
+            }
+        }
+
+        window.onload = function() {
+            var imagem = document.querySelector('#presente');
+            imagem.addEventListener("click", function() {
+                if (imagem.alt == 'Presente Fechado') {
+                    imagem.src = 'presente-aberto.gif';
+                    imagem.alt = 'Presente Aberto';
+                }
+                else {
+                    imagem.src = 'presente-fechado.gif';
+                    imagem.alt = 'Presente Fechado';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
